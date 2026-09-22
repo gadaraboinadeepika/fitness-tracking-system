@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'workout_screen.dart';
+import 'progress_screen.dart';
 
 void main() {
   runApp(const FitnessTrackingApp());
@@ -44,7 +45,9 @@ class FitnessHomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+
             const SizedBox(height: 8),
+
             const Text(
               'Track your daily fitness activity',
               style: TextStyle(
@@ -52,7 +55,9 @@ class FitnessHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+
             const SizedBox(height: 20),
+
             const Text(
               "Today's Activity",
               style: TextStyle(
@@ -60,7 +65,9 @@ class FitnessHomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+
             const SizedBox(height: 15),
+
             Row(
               children: [
                 Expanded(
@@ -80,7 +87,9 @@ class FitnessHomePage extends StatelessWidget {
                 ),
               ],
             ),
+
             const SizedBox(height: 12),
+
             Row(
               children: [
                 Expanded(
@@ -100,7 +109,9 @@ class FitnessHomePage extends StatelessWidget {
                 ),
               ],
             ),
+
             const SizedBox(height: 25),
+
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
@@ -115,7 +126,9 @@ class FitnessHomePage extends StatelessWidget {
                     color: Colors.white,
                     size: 45,
                   ),
+
                   const SizedBox(height: 10),
+
                   const Text(
                     'Ready for a Workout?',
                     style: TextStyle(
@@ -124,7 +137,9 @@ class FitnessHomePage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
                   const SizedBox(height: 10),
+
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -135,6 +150,20 @@ class FitnessHomePage extends StatelessWidget {
                       );
                     },
                     child: const Text('Start Workout'),
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProgressScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text('View Progress'),
                   ),
                 ],
               ),
@@ -161,7 +190,9 @@ class FitnessHomePage extends StatelessWidget {
               size: 35,
               color: Colors.green,
             ),
+
             const SizedBox(height: 8),
+
             Text(
               title,
               style: const TextStyle(
@@ -169,7 +200,9 @@ class FitnessHomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+
             const SizedBox(height: 5),
+
             Text(
               value,
               style: const TextStyle(
