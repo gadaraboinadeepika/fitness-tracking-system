@@ -18,7 +18,57 @@ class FitnessTrackingApp extends StatelessWidget {
         primarySwatch: Colors.green,
         scaffoldBackgroundColor: Colors.grey[100],
       ),
-      home: const FitnessHomePage(),
+      home: const MainNavigationScreen(),
+    );
+  }
+}
+
+class MainNavigationScreen extends StatefulWidget {
+  const MainNavigationScreen({super.key});
+
+  @override
+  State<MainNavigationScreen> createState() =>
+      _MainNavigationScreenState();
+}
+
+class _MainNavigationScreenState
+    extends State<MainNavigationScreen> {
+  int selectedIndex = 0;
+
+  final List<Widget> screens = const [
+    FitnessHomePage(),
+    WorkoutScreen(),
+    ProgressScreen(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: screens[selectedIndex],
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        selectedItemColor: Colors.green,
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fitness_center),
+            label: 'Workout',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bar_chart),
+            label: 'Progress',
+          ),
+        ],
+      ),
     );
   }
 }
@@ -33,6 +83,7 @@ class FitnessHomePage extends StatelessWidget {
         title: const Text('Fitness Tracking System'),
         centerTitle: true,
       ),
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -119,6 +170,7 @@ class FitnessHomePage extends StatelessWidget {
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(15),
               ),
+
               child: Column(
                 children: [
                   const Icon(
@@ -140,30 +192,13 @@ class FitnessHomePage extends StatelessWidget {
 
                   const SizedBox(height: 10),
 
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const WorkoutScreen(),
-                        ),
-                      );
-                    },
-                    child: const Text('Start Workout'),
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ProgressScreen(),
-                        ),
-                      );
-                    },
-                    child: const Text('View Progress'),
+                  const Text(
+                    'Stay active and reach your fitness goals!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                    ),
                   ),
                 ],
               ),
