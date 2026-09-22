@@ -1,5 +1,5 @@
-```dart
 import 'package:flutter/material.dart';
+import 'workout_screen.dart';
 
 void main() {
   runApp(const FitnessTrackingApp());
@@ -38,7 +38,7 @@ class FitnessHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Hello, Deepika 👋',
+              'Hello, Deepika',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -126,7 +126,14 @@ class FitnessHomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const WorkoutScreen(),
+                        ),
+                      );
+                    },
                     child: const Text('Start Workout'),
                   ),
                 ],
@@ -175,34 +182,3 @@ class FitnessHomePage extends StatelessWidget {
     );
   }
 }
-```
-
-### Step 4 — Save the Notepad file
-
-Press:
-
-**Ctrl + S**
-
-Then **close Notepad**.
-
-### Step 5 — Verify
-
-Back in PowerShell, type:
-
-```powershell
-type lib\main.dart
-```
-
-The first line should be:
-
-```text
-import 'package:flutter/material.dart';
-```
-
-and you should see:
-
-```text
-runApp(const FitnessTrackingApp());
-```
-
-**Don't run Git yet.** Send me the first few lines/output after this check.
