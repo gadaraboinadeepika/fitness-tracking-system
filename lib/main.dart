@@ -224,6 +224,40 @@ class FitnessHomePage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
+            Card(
+              elevation: 3,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: const [
+                    Icon(
+                      Icons.emoji_events,
+                      color: Colors.orange,
+                      size: 40,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Daily Motivation',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      '"Success starts with small steps. '
+                      'Keep moving every day!"',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -265,3 +299,4 @@ class FitnessHomePage extends StatelessWidget {
     );
   }
 }
+
