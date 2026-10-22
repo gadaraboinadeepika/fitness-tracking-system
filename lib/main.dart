@@ -100,7 +100,7 @@ class FitnessHomePage extends StatelessWidget {
             const SizedBox(height: 8),
 
             const Text(
-              'Track your daily fitness activity',
+              'Track your daily fitness activity and reach your goals!',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.grey,
