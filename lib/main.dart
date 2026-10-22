@@ -1,9 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'workout_screen.dart';
 import 'progress_screen.dart';
 import 'water_tracker_screen.dart';
 import 'workout_timer_screen.dart';
 import 'profile_screen.dart';
+import 'workout_history_screen.dart';
 
 void main() {
   runApp(const FitnessTrackingApp());
@@ -45,6 +47,7 @@ class _MainNavigationScreenState
     WaterTrackerScreen(),
     WorkoutTimerScreen(),
     ProfileScreen(),
+    WorkoutHistoryScreen(),
   ];
 
   @override
@@ -84,6 +87,10 @@ class _MainNavigationScreenState
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'History',
           ),
         ],
       ),
@@ -177,8 +184,8 @@ class FitnessHomePage extends StatelessWidget {
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Column(
-                children: const [
+              child: const Column(
+                children: [
                   Icon(
                     Icons.fitness_center,
                     color: Colors.white,
