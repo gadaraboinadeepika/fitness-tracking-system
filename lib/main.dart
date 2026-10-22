@@ -7,6 +7,7 @@ import 'workout_timer_screen.dart';
 import 'profile_screen.dart';
 import 'workout_history_screen.dart';
 import 'settings_screen.dart';
+import 'fitness_goals_screen.dart';
 
 void main() {
   runApp(const FitnessTrackingApp());
@@ -50,6 +51,7 @@ class _MainNavigationScreenState
     ProfileScreen(),
     WorkoutHistoryScreen(),
     SettingsScreen(),
+    FitnessGoalsScreen(),
   ];
 
   @override
@@ -97,6 +99,10 @@ class _MainNavigationScreenState
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.flag),
+            label: 'Goals',
           ),
         ],
       ),
