@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'workout_screen.dart';
 import 'progress_screen.dart';
+import 'water_tracker_screen.dart';
 
 void main() {
   runApp(const FitnessTrackingApp());
@@ -39,6 +40,7 @@ class _MainNavigationScreenState
     FitnessHomePage(),
     WorkoutScreen(),
     ProgressScreen(),
+    WaterTrackerScreen(),
   ];
 
   @override
@@ -66,6 +68,10 @@ class _MainNavigationScreenState
           BottomNavigationBarItem(
             icon: Icon(Icons.bar_chart),
             label: 'Progress',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.water_drop),
+            label: 'Water',
           ),
         ],
       ),
