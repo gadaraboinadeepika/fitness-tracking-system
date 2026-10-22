@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'workout_screen.dart';
 import 'progress_screen.dart';
 import 'water_tracker_screen.dart';
+import 'workout_timer_screen.dart';
 
 void main() {
   runApp(const FitnessTrackingApp());
@@ -41,14 +43,15 @@ class _MainNavigationScreenState
     WorkoutScreen(),
     ProgressScreen(),
     WaterTrackerScreen(),
+    WorkoutTimerScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: screens[selectedIndex],
-
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
         selectedItemColor: Colors.green,
         onTap: (index) {
@@ -73,6 +76,10 @@ class _MainNavigationScreenState
             icon: Icon(Icons.water_drop),
             label: 'Water',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.timer),
+            label: 'Timer',
+          ),
         ],
       ),
     );
@@ -89,7 +96,6 @@ class FitnessHomePage extends StatelessWidget {
         title: const Text('Fitness Tracking System'),
         centerTitle: true,
       ),
-
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -102,9 +108,7 @@ class FitnessHomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-
             const SizedBox(height: 8),
-
             const Text(
               'Track your daily fitness activity and reach your goals!',
               style: TextStyle(
@@ -112,9 +116,7 @@ class FitnessHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-
             const SizedBox(height: 20),
-
             const Text(
               "Today's Activity",
               style: TextStyle(
@@ -122,9 +124,7 @@ class FitnessHomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-
             const SizedBox(height: 15),
-
             Row(
               children: [
                 Expanded(
@@ -144,9 +144,7 @@ class FitnessHomePage extends StatelessWidget {
                 ),
               ],
             ),
-
             const SizedBox(height: 12),
-
             Row(
               children: [
                 Expanded(
@@ -166,9 +164,7 @@ class FitnessHomePage extends StatelessWidget {
                 ),
               ],
             ),
-
             const SizedBox(height: 25),
-
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
@@ -176,7 +172,6 @@ class FitnessHomePage extends StatelessWidget {
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(15),
               ),
-
               child: Column(
                 children: [
                   const Icon(
@@ -184,9 +179,7 @@ class FitnessHomePage extends StatelessWidget {
                     color: Colors.white,
                     size: 45,
                   ),
-
                   const SizedBox(height: 10),
-
                   const Text(
                     'Ready for a Workout?',
                     style: TextStyle(
@@ -195,9 +188,7 @@ class FitnessHomePage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-
                   const SizedBox(height: 10),
-
                   const Text(
                     'Stay active and reach your fitness goals!',
                     textAlign: TextAlign.center,
@@ -231,9 +222,7 @@ class FitnessHomePage extends StatelessWidget {
               size: 35,
               color: Colors.green,
             ),
-
             const SizedBox(height: 8),
-
             Text(
               title,
               style: const TextStyle(
@@ -241,14 +230,10 @@ class FitnessHomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-
             const SizedBox(height: 5),
-
             Text(
               value,
-              style: const TextStyle(
-                fontSize: 18,
-              ),
+              style: const TextStyle(fontSize: 18),
             ),
           ],
         ),
