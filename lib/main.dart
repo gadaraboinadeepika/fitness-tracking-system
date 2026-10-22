@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'workout_screen.dart';
 import 'progress_screen.dart';
 import 'water_tracker_screen.dart';
 import 'workout_timer_screen.dart';
+import 'profile_screen.dart';
 
 void main() {
   runApp(const FitnessTrackingApp());
@@ -44,6 +44,7 @@ class _MainNavigationScreenState
     ProgressScreen(),
     WaterTrackerScreen(),
     WorkoutTimerScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -79,6 +80,10 @@ class _MainNavigationScreenState
           BottomNavigationBarItem(
             icon: Icon(Icons.timer),
             label: 'Timer',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
       ),
@@ -173,14 +178,14 @@ class FitnessHomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
-                children: [
-                  const Icon(
+                children: const [
+                  Icon(
                     Icons.fitness_center,
                     color: Colors.white,
                     size: 45,
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
+                  SizedBox(height: 10),
+                  Text(
                     'Ready for a Workout?',
                     style: TextStyle(
                       color: Colors.white,
@@ -188,8 +193,8 @@ class FitnessHomePage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
+                  SizedBox(height: 10),
+                  Text(
                     'Stay active and reach your fitness goals!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -206,7 +211,7 @@ class FitnessHomePage extends StatelessWidget {
     );
   }
 
-  Widget activityCard(
+  static Widget activityCard(
     IconData icon,
     String title,
     String value,
